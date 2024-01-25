@@ -1,0 +1,48 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+        <div class="media">
+            <img class="rounded-circle account-img" src="{{ profile_user.profile.image.url }}">
+            <div class="media-body">
+                
+                    <h3 class="account-heading">{{ profile_user.username }}</h3>
+                    <p class="text-secondary">{{ profile_user.email }}</p>
+                    <p class="text-secondary">{{ profile_user.profile.bio }}</p>
+                
+                <p class="text-secondary">Favorite Book: {{ profile_user.profile.favorite_book }}</p>
+            </div>
+        </div>
+        <!--<div class="content-section">
+            <h5>{{ profile_user.username }} is a member of:</h5>
+            {% for clubname in profile_user.profile.club.all %}
+                <p class="text-secondary">{{ clubname.name }}</p>
+            {% endfor %}
+        </div>-->
+        {% if profile_user == user %}
+            <a href="{% url 'update-profile' %}"><button>Edit Profile</button></a>
+        {% endif %}
+        <p></p>
+        <div>
+            {% if posts %}
+                <h4>Current Posts</h4>
+                {% for post in posts %}
+                    <article class="media content-section">
+                        <div class="media-body">
+                        <div class="article-metadata">
+                            <small class="text-muted">{{ post.date_posted|date:"F d, Y"}}</small>
+                            <a class="mr-2" href="{% url 'club-home' pk=post.club.pk %}">{{ post.club.name }}</a>
+                        </div>
+                        <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
+                        <p class="article-content">{{ post.content }}</p>
+                        </div>
+                    </article>
+                {% endfor %}
+            {% else %}
+                <small class="text-muted">
+                    <p>There isn't much here...</p>
+                </small>
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}

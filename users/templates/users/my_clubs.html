@@ -1,0 +1,18 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <div class="content-section">
+            <div class="media">
+                <div class="media-body">
+                    <h5>{{ profile_user.username }} is a member of:</h5>
+                    {% for clubname in profile_user.profile.club.all %}
+                        <p class="text-secondary"><a href="{% url 'club-home' pk=clubname.pk %}">{{ clubname.name }}</a></p>
+                        <!--<input type="submit" name="btn" value="{{ clubname.name }}" />-->
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock content %}

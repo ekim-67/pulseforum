@@ -1,0 +1,47 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    {% if user.is_authenticated %}
+        {% if is_member %}
+            <div class="content-section">
+                <div class="article-metadata">
+                    <h1> {{ club.name }} </h1>
+                </div>
+                <div class="media-body"> Description: {{ club.description }}</div>
+                <div class="media-body"> Current Book: {{ club.current_book }}</div>
+            </div>
+            <article class="media content-section">
+                <img class="rounded-circle article-img" src="{{ user.profile.image.url }}">
+                <div class="media-body">
+                    <div class="article-metadata">
+                        New Post
+                    </div>
+                    <p class="article-content"><a href="{% url 'post-create' club_id=club.pk%}">Add to the discussion</a></p>
+                </div>
+            </article>
+
+            {% for post in posts %}
+                <article class="media content-section">
+                    <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
+                    <div class="media-body">
+                    <div class="article-metadata">
+                        <a class="mr-2 text_white hover_black" href="{% url 'profile-with-pk' pk=post.author.pk %}">{{ post.author }}</a>
+                        <small class="text-muted">{{ post.date_posted|date:"F d, Y"}}</small>
+                    </div>
+                    <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
+                    <p class="article-content">{{ post.content }}</p>
+                    </div>
+                </article>
+            {% endfor %}
+        {% else %}
+            <div class="content-section">
+                <h5>You are not a member of this club. To see the contents of this club, please request to <a href="{% url 'club-list' %}">join.</a></h5>
+            </div>
+        {% endif %}
+
+        
+    {% else %}
+        <div class="content-section">
+            <h5>To view the Book Club, please <a href="{% url 'login' %}">login</a> or <a href="{% url 'register' %}">register</a> an account</h5>
+        </div>
+    {% endif %}
+{% endblock content %}

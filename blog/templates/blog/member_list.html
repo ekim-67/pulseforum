@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="content-section">
+                <h3>Current Members</h3><p></p>
+                {% for member in members %}
+                    <a href="{% url 'profile-with-pk' pk=member.pk %}">{{ member.username }}</a>
+                    <p></p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    {% if user.is_authenticated %}
+        {% for post in posts %}
+            <article class="media content-section">
+                <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
+                <div class="media-body">
+                <div class="article-metadata">
+                    <a class="mr-2 text_white hover_black" href="{% url 'profile-with-pk' pk=1 %}">{{ post.author }}</a>
+                    <small class="text-muted">{{ post.date_posted|date:"F d, Y"}}</small>
+                </div>
+                <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
+                <p class="article-content">{{ post.content }}</p>
+                </div>
+            </article>
+        {% endfor %}
+        
+    {% else %}
+        <div class="content-section">
+            <h5>To view the Book Club, please <a href="{% url 'login' %}">login</a> or <a href="{% url 'register' %}">register</a> an account</h5>
+        </div>
+    {% endif %}
+{% endblock content %}
