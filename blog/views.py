@@ -50,8 +50,9 @@ def create_club(request):
         form = ClubForm(request.POST)
         if form.is_valid():
             new_club = form.save(commit=False)
-            form.save()
             user = request.user
+            new_club.owner = user
+            form.save()
             user.profile.club.add(new_club)
             return redirect('blog-home')
     else:

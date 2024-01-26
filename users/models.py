@@ -16,6 +16,6 @@ class Profile(models.Model):
     def save(self, *args, **kwargs):   
         super(Profile, self).save(*args, **kwargs)  
         if not self.club.all(): 
-            general = Club.objects.get(name='General')
+            general = Club.objects.get_or_create(name='General')[0]
             self.club.add(general)
         

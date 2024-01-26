@@ -8,6 +8,7 @@
                 </div>
                 <div class="media-body"> Description: {{ club.description }}</div>
                 <div class="media-body"> Current Book: {{ club.current_book }}</div>
+                <div class="media-body"> Owner: <a href = "{% url 'profile-with-pk' pk=club.owner.pk %}">{{ club.owner }}</a></div>
             </div>
             <article class="media content-section">
                 <img class="rounded-circle article-img" src="{{ user.profile.image.url }}">

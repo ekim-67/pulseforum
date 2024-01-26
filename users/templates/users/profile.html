@@ -13,12 +13,7 @@
                 <p class="text-secondary">Favorite Book: {{ profile_user.profile.favorite_book }}</p>
             </div>
         </div>
-        <!--<div class="content-section">
-            <h5>{{ profile_user.username }} is a member of:</h5>
-            {% for clubname in profile_user.profile.club.all %}
-                <p class="text-secondary">{{ clubname.name }}</p>
-            {% endfor %}
-        </div>-->
+        
         {% if profile_user == user %}
             <a href="{% url 'update-profile' %}"><button>Edit Profile</button></a>
         {% endif %}

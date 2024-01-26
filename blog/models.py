@@ -8,6 +8,7 @@ class Club(models.Model):
     current_book = models.CharField(max_length=100, null=True)
     description = models.CharField(max_length=500, null=True)
     banner = models.ImageField(default='default_book.jpg', upload_to='profile_pics')
+    owner = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.name
