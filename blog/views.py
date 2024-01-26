@@ -43,7 +43,10 @@ def clubHome(request, pk):
     }
     #for the third argument, passing in a dictionary with a single entry -- pointing to a list of dictionaries inside it. 
 
-    return render(request, 'blog/club_home.html', context)
+    if club.name == "General":
+        return render(request, 'blog/home.html', context)
+    else:
+        return render(request, 'blog/club_home.html', context)
 
 def create_club(request):
     if request.method == 'POST':
