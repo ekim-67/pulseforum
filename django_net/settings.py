@@ -162,4 +162,4 @@ STATIC_URL = '/static/'
     },
 }'''
 
-CSRF_TRUSTED_ORIGINS = ['https://ourbookclubs-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://ourbookclubs-production.up.railway.app', 'https://ourbookclubs.com']
