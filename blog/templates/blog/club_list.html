@@ -1,18 +1,26 @@
 {% extends "blog/base.html" %}
 {% load crispy_forms_tags %} 
 {% block content %}
-<div class="content-section">
-    <h3>All Clubs (Click to Join):</h3>
-    <form method="POST">
-        {% csrf_token %}
-        {% for club in clubs %}
-            <input type="submit" name="btn" value="{{ club.name }}" />
-            <p></p>
-            Currently Reading: {{ club.current_book }}
-            <p></p>
-            Description: {{ club.description }}
-            <p></p>
-        {% endfor %}
-    </form>
-</div>
+
+{% if user.is_authenticated %}
+    <div class="content-section">
+        <h3>All Clubs (Click to Join):</h3>
+        <form method="POST">
+            {% csrf_token %}
+            {% for club in clubs %}
+                <input type="submit" name="btn" value="{{ club.name }}" />
+                <p></p>
+                Currently Reading: {{ club.current_book }}
+                <p></p>
+                Description: {{ club.description }}
+                <p></p>
+            {% endfor %}
+        </form>
+    </div>
+{% else %}
+    <div class="content-section">
+        <h5>To view the Book Club, please <a href="{% url 'login' %}">login</a> or <a href="{% url 'register' %}">register</a> an account</h5>
+    </div>
+{% endif %}
+
 {% endblock content %}
