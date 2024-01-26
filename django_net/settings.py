@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-qm=2t0+oa)!a(3
 #DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['ourbookclubs-production.up.railway.app', '127.0.0.1']
+ALLOWED_HOSTS = ['ourbookclubs-production.up.railway.app', 'ourbookclubs.com', '127.0.0.1']
 
 
 # Application definition
