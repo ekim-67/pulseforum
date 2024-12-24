@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 #DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['ourbookclubs-production.up.railway.app', 'ourbookclubs.com', '127.0.0.1']
+ALLOWED_HOSTS = ['thepulse.up.railway.app', '127.0.0.1']
 
 
 # Application definition
@@ -165,4 +165,4 @@ STATIC_URL = '/static/'
     },
 }'''
 
-CSRF_TRUSTED_ORIGINS = ['https://ourbookclubs-production.up.railway.app', 'https://ourbookclubs.com']
+CSRF_TRUSTED_ORIGINS = ['thepulse.up.railway.app']
