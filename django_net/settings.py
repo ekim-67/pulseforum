@@ -165,4 +165,4 @@ STATIC_URL = '/static/'
     },
 }'''
 
-CSRF_TRUSTED_ORIGINS = ['http://thepulse.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://thepulse.up.railway.app']
