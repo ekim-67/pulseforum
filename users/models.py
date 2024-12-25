@@ -5,7 +5,7 @@ from blog.models import Club
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     #CASCADE - if user is deleted, then also delete profile
-    image = models.ImageField(default='profile_pics/default-icon.jpg', upload_to='profile_pics')
+    image = models.ImageField(default='profile_pics/default.jpg', upload_to='profile_pics')
     bio = models.TextField(default="There isn't much here...", blank=True)
     favorite_book = models.TextField(blank=True)
     club = models.ManyToManyField(Club)
