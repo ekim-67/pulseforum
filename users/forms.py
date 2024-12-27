@@ -33,3 +33,8 @@ class ClubForm(forms.ModelForm):
     class Meta:
         model = Club
         fields = ['name', 'current_book', 'description']
+
+class ClubUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Club
+        fields = ['name', 'current_book', 'description']

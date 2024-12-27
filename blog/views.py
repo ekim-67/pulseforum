@@ -4,7 +4,7 @@ from .models import Post, Comment, Club
 from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, FormView
 from django.views import View
-from users.forms import CommentForm, ClubForm
+from users.forms import CommentForm, ClubForm, ClubUpdateForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic.detail import SingleObjectMixin
 from django.http import HttpResponseForbidden
@@ -40,6 +40,7 @@ def clubHome(request, pk):
         'members': User.objects.all(),
         'club': club,
         'is_member': is_member,
+        'owner': club.owner,
     }
     #for the third argument, passing in a dictionary with a single entry -- pointing to a list of dictionaries inside it. 
 
@@ -61,6 +62,39 @@ def create_club(request):
     else:
         form = ClubForm()
     return render(request, 'blog/create_club.html', {'form':form})
+
+'''@login_required
+def update_club(request):
+    if request.method == 'POST':
+        c_form = ClubUpdateForm(request.POST, instance=request.user)
+        if c_form.is_valid():
+            c_form.save()
+            messages.success(request, f'Group info updated!')
+            return redirect('blog-home')
+    else:
+        c_form = ClubUpdateForm(instance=request.user)
+    
+    context = {
+        'c_form': c_form,
+    }
+
+    return render(request, 'blog/update_club.html', context)'''
+
+class ClubUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Club
+    fields = ['title', 'content']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form) 
+        #sets the author variable before the parent class runs the function
+    
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        else:
+            return False
 
 def club_list(request): #includes means of joining club
     clubs = Club.objects.all()

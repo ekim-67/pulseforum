@@ -10,6 +10,9 @@
                 <div class="media-body"> Description: {{ club.description }}</div>
                 <!--<div class="media-body"> Current Book: {{ club.current_book }}</div>-->
                 <div class="media-body"> Owner: <a href = "{% url 'profile-with-pk' pk=club.owner.pk %}">{{ club.owner }}</a></div>
+                {% if club.owner == user %}
+                    <a href="{% url 'update-club' %}"><button>Edit Group Info</button></a>
+                {% endif %}
             </div>
             <article class="media content-section">
                 <img class="rounded-circle article-img" src="{{ user.profile.image.url }}">
@@ -18,6 +21,7 @@
                         New Post
                     </div>
                     <p class="article-content"><a href="{% url 'post-create' club_id=club.pk%}">Add to the discussion</a></p>
+        
                 </div>
             </article>
 
