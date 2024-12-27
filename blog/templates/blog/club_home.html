@@ -11,7 +11,9 @@
                 <!--<div class="media-body"> Current Book: {{ club.current_book }}</div>-->
                 <div class="media-body"> Owner: <a href = "{% url 'profile-with-pk' pk=club.owner.pk %}">{{ club.owner }}</a></div>
                 {% if club.owner == user %}
-                    <a href="{% url 'update-club' %}"><button>Edit Group Info</button></a>
+                    <div>
+                        <a class = "btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'club-update' object.id %}">Update</a>
+                    </div>
                 {% endif %}
             </div>
             <article class="media content-section">
