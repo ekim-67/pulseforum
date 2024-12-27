@@ -15,7 +15,7 @@ from django.shortcuts import get_object_or_404
 
 
 def home(request, pk):
-    club = get_object_or_404(Club, pk=pk)
+    club = get_object_or_404(Club, pk=5)
 
     context = {
         'posts': club.post_set.all(),
