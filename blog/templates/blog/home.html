@@ -8,6 +8,7 @@
                 <div class="article-metadata">
                     <a class="mr-2 text_white hover_black" href="{% url 'profile-with-pk' pk=1 %}">{{ post.author }}</a>
                     <small class="text-muted">{{ post.date_posted|date:"F d, Y"}}</small>
+                    <small class="text-muted">Posted in: {{ post.club }}</small>
                 </div>
                 <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
                 <p class="article-content">{{ post.content }}</p>
