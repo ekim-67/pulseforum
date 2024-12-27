@@ -64,9 +64,10 @@ def create_club(request):
     return render(request, 'blog/create_club.html', {'form':form})
 
 @login_required
-def update_club(request):
+def update_club(request, pk):
     if request.method == 'POST':
-        c_form = ClubUpdateForm(request.POST, instance=request.user)
+        club = get_object_or_404(Club, pk=pk)
+        c_form = ClubUpdateForm(request.POST, instance=club)
         if c_form.is_valid():
             c_form.save()
             messages.success(request, f'Group info updated!')
