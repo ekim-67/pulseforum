@@ -12,7 +12,7 @@
                 <div class="media-body"> Owner: <a href = "{% url 'profile-with-pk' pk=club.owner.pk %}">{{ club.owner }}</a></div>
                 {% if club.owner == user %}
                     <div>
-                        <a class = "btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'club-update' object.id %}">Update</a>
+                        <a class = "btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'update-club' %}">Update Info</a>
                     </div>
                 {% endif %}
             </div>

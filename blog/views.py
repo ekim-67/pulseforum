@@ -63,7 +63,7 @@ def create_club(request):
         form = ClubForm()
     return render(request, 'blog/create_club.html', {'form':form})
 
-'''@login_required
+@login_required
 def update_club(request):
     if request.method == 'POST':
         c_form = ClubUpdateForm(request.POST, instance=request.user)
@@ -78,9 +78,9 @@ def update_club(request):
         'c_form': c_form,
     }
 
-    return render(request, 'blog/update_club.html', context)'''
+    return render(request, 'blog/club_update_form.html', context)
 
-class ClubUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+'''class ClubUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Club
     fields = ['name', 'description', 'banner']
     template_name = 'blog/club_update_form.html'
@@ -95,7 +95,7 @@ class ClubUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         if self.request.user == club.owner:
             return True
         else:
-            return False
+            return False'''
 
 def club_list(request): #includes means of joining club
     clubs = Club.objects.all()
