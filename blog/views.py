@@ -83,7 +83,7 @@ def update_club(request):
 class ClubUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Club
     fields = ['name', 'description', 'banner']
-    #template_name_suffix = "_update_form"
+    template_name_suffix = "_update_form.html"
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -91,8 +91,8 @@ class ClubUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         #sets the author variable before the parent class runs the function
     
     def test_func(self):
-        post = self.get_object()
-        if self.request.user == post.author:
+        club = self.get_object()
+        if self.request.user == club.owner:
             return True
         else:
             return False
