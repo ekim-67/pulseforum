@@ -80,23 +80,6 @@ def update_club(request):
 
     return render(request, 'blog/club_update_form.html', context)
 
-'''class ClubUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
-    model = Club
-    fields = ['name', 'description', 'banner']
-    template_name = 'blog/club_update_form.html'
-
-    def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super().form_valid(form) 
-        #sets the author variable before the parent class runs the function
-    
-    def test_func(self):
-        club = self.get_object()
-        if self.request.user == club.owner:
-            return True
-        else:
-            return False'''
-
 def club_list(request): #includes means of joining club
     clubs = Club.objects.all()
     user = request.user
