@@ -14,7 +14,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 
 
-def home(request, pk):
+def home(request):
     club = get_object_or_404(Club, pk=5)
 
     context = {
