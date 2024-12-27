@@ -82,7 +82,8 @@ def update_club(request):
 
 class ClubUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Club
-    fields = ['title', 'content']
+    fields = ['name', 'description', 'banner']
+    #template_name_suffix = "_update_form"
 
     def form_valid(self, form):
         form.instance.author = self.request.user
