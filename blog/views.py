@@ -58,7 +58,7 @@ def create_club(request):
             new_club.owner = user
             form.save()
             user.profile.club.add(new_club)
-            return redirect('club-home')
+            return redirect('club-home', pk=new_club.id)
     else:
         form = ClubForm()
     return render(request, 'blog/create_club.html', {'form':form})
