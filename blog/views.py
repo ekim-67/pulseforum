@@ -44,6 +44,7 @@ def clubHome(request, pk):
     #for the third argument, passing in a dictionary with a single entry -- pointing to a list of dictionaries inside it. 
 
     if club.name == "General":
+        context['posts'] = Post.objects.all()
         return render(request, 'blog/home.html', context)
     else:
         return render(request, 'blog/club_home.html', context)
