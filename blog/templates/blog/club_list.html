@@ -8,11 +8,11 @@
         <form method="POST">
             {% csrf_token %}
             {% for club in clubs %}
+                <img class="rounded-circle account-img" src="{{ club.banner.url }}" />
                 <input type="submit" name="btn" value="{{ club.name }}" />
                 <p></p>
                 Description: {{ club.description }}
                 <p></p>
-                <img class="rounded-circle account-img" src="{{ club.banner.url }}">
             {% endfor %}
         </form>
     </div>

@@ -9,7 +9,7 @@
                     <h5>{{ profile_user.username }} is a member of:</h5>
                     {% for clubname in profile_user.profile.club.all %}
                         <p class="text-secondary"><a href="{% url 'club-home' pk=clubname.pk %}">{{ clubname.name }}</a></p>
-                        <img class="rounded-circle account-img" src="{{ club.banner.url }}">
+                        <img class="rounded-circle account-img" src="{{ clubname.banner.url }}" />
                     {% endfor %}
                 </div>
             </div>
