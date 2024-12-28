@@ -71,7 +71,7 @@ def update_club(request, club_id):
         if c_form.is_valid():
             c_form.save()
             messages.success(request, f'Group info updated!')
-            return redirect(reverse('blog:club_home', kwargs={'pk': club_id}))
+            return redirect('club-home', kwargs={'pk': club_id}))
     else:
         c_form = ClubUpdateForm(instance=request.user)
     
