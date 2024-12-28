@@ -64,9 +64,9 @@ def create_club(request):
     return render(request, 'blog/create_club.html', {'form':form})
 
 @login_required
-def update_club(request, pk):
+def update_club(request, club_id):
     if request.method == 'POST':
-        club = get_object_or_404(Club, pk=pk)
+        club = Club.objects.get(pk=club_id)
         c_form = ClubUpdateForm(request.POST, instance=club)
         if c_form.is_valid():
             c_form.save()
