@@ -6,7 +6,7 @@
                 <div class="article-metadata">
                     <h1> {{ club.name }} </h1>
                 </div>
-                <img class="rounded-circle account-img" src="{{ club.banner.image.url }}">
+                <img class="rounded-circle account-img" src="{{ club.banner.url }}">
                 <div class="media-body"> Description: {{ club.description }}</div>
                 <div class="media-body"> Owner: <a href = "{% url 'profile-with-pk' pk=club.owner.pk %}">{{ club.owner }}</a></div>
                 {% if club.owner == user %}
