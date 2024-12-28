@@ -8,11 +8,10 @@
                 </div>
                 <img class="rounded-circle account-img" src="{{ club.banner.image.url }}">
                 <div class="media-body"> Description: {{ club.description }}</div>
-                <!--<div class="media-body"> Current Book: {{ club.current_book }}</div>-->
                 <div class="media-body"> Owner: <a href = "{% url 'profile-with-pk' pk=club.owner.pk %}">{{ club.owner }}</a></div>
                 {% if club.owner == user %}
                     <div>
-                        <a class = "btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'update-club' %}">Update Info</a>
+                        <a class = "btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'update-club' club_id=club.pk %}">Update Info</a>
                     </div>
                 {% endif %}
             </div>
@@ -23,7 +22,6 @@
                         New Post
                     </div>
                     <p class="article-content"><a href="{% url 'post-create' club_id=club.pk%}">Add to the discussion</a></p>
-        
                 </div>
             </article>
 
