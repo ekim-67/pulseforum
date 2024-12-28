@@ -67,7 +67,7 @@ def create_club(request):
 def update_club(request, club_id):
     if request.method == 'POST':
         club = Club.objects.get(pk=club_id)
-        c_form = ClubUpdateForm(request.POST, instance=club)
+        c_form = ClubUpdateForm(request.POST, request.FILES, instance=club)
         if c_form.is_valid():
             c_form.save()
             messages.success(request, f'Group info updated!')
