@@ -6,7 +6,7 @@
                 <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
                 <div class="media-body">
                 <div class="article-metadata">
-                    <a class="mr-2 text_white hover_black" href="{% url 'profile-with-pk' pk=1 %}">{{ post.author }}</a>
+                    <a class="mr-2 text_white hover_black" href="{% url 'profile-with-pk' pk=post.author.id %}">{{ post.author }}</a>
                     <small class="text-muted">{{ post.date_posted|date:"F d, Y"}}</small>
                     <a class="mr-2" href="{% url 'club-home' pk=post.club.pk %}">{{ post.club.name }}</a>
                 </div>
