@@ -30,13 +30,13 @@
 </head>
 <body>
   <header class="site-header">
-    <nav class="navbar navbar-expand-md navbar-dark bg-black fixed-top px-5 d-flex align-items-center" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-md navbar-dark bg-black fixed-top px-5" data-bs-theme="dark">
       <div class="container-fluid d-flex align-items-center">
         <!-- Navbar brand aligned to the left -->
         <a class="navbar-brand" href="{% url 'blog-home' %}">Pulse</a>
         <!-- Right-aligned elements -->
         <div class="d-flex align-items-center ms-auto">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav d-flex align-items-center">
             <li class="nav-item">
               <a class="nav-link active" href="{% url 'blog-home' %}">Feed
                 <span class="visually-hidden">(current)</span>
@@ -55,9 +55,9 @@
                   <a class="dropdown-item" href="{% url 'create-club' %}">New Group</a>
                 </div>
               </li>
-              <li class="nav-item d-flex align-items-center dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                  <img class="rounded-circle nav-img" src="{{ user.profile.image.url }}" alt="Profile Image" style="height:30px; width:30px; object-fit:cover;">
+              <li class="nav-item dropdown d-flex align-items-center">
+                <a class="nav-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                  <img class="rounded-circle nav-img" src="{{ user.profile.image.url }}" alt="Profile Image" style="height:30px; width:30px; object-fit:cover; vertical-align:middle;">
                 </a>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
@@ -79,7 +79,7 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </nav>    
   </header>
   
     <!--<header class="site-header">
