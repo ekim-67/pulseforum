@@ -70,6 +70,11 @@ a.article-title:hover {
   margin-right: 16px;
 }
 
+.nav-img {
+  height: 30px;
+  width: 30px;
+}
+
 .article-metadata {
   text-decoration: none;
   color: inherit;
@@ -109,7 +114,3 @@ a.article-title:hover {
   font-size: 2.5rem;
 }
 
-.nav-image {
-  height: 30px;
-  width: 30px;
-}
