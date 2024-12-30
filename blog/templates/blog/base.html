@@ -38,6 +38,58 @@
         <div class="d-flex align-items-center ms-auto">
           <ul class="navbar-nav d-flex align-items-center">
             <li class="nav-item">
+              <a class="nav-link {% if request.resolver_match.url_name == 'blog-home' %}active{% endif %}" href="{% url 'blog-home' %}">Feed
+                <span class="visually-hidden">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if request.resolver_match.url_name == 'blog-about' %}active{% endif %}" href="{% url 'blog-about' %}">About</a>
+            </li>
+            {% if user.is_authenticated %}
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle {% if request.resolver_match.url_name in ['club-list', 'my-clubs', 'create-club'] %}active{% endif %}" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Groups</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="{% url 'club-list' %}">All Groups</a>
+                  <a class="dropdown-item" href="{% url 'my-clubs' %}">My Groups</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{% url 'create-club' %}">New Group</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown d-flex align-items-center">
+                <a class="nav-link dropdown-toggle d-flex align-items-center {% if request.resolver_match.url_name == 'profile' %}active{% endif %}" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                  <img class="rounded-circle nav-img" src="{{ user.profile.image.url }}" alt="Profile Image" style="height:30px; width:30px; object-fit:cover; vertical-align:middle;">
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                  <form method="POST" action="{% url 'logout' %}" class="m-0">
+                    {% csrf_token %}
+                    <button type="submit" class="dropdown-item">Logout</button>
+                  </form>
+                </div>
+              </li>
+            {% else %}
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle {% if request.resolver_match.url_name in ['login', 'register'] %}active{% endif %}" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Join</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="{% url 'login' %}">Login</a>
+                  <a class="dropdown-item" href="{% url 'register' %}">Register</a>
+                </div>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <!--
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-black fixed-top px-5" data-bs-theme="dark">
+      <div class="container-fluid d-flex align-items-center">
+        <a class="navbar-brand" href="{% url 'blog-home' %}">Pulse</a>
+        <div class="d-flex align-items-center ms-auto">
+          <ul class="navbar-nav d-flex align-items-center">
+            <li class="nav-item">
               <a class="nav-link active" href="{% url 'blog-home' %}">Feed
                 <span class="visually-hidden">(current)</span>
               </a>
@@ -80,58 +132,7 @@
         </div>
       </div>
     </nav>    
-  </header>
-  
-    <!--<header class="site-header">
-      <nav class="navbar navbar-expand-md navbar-dark bg-black fixed-top px-5" data-bs-theme="dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'blog-home' %}">Pulse</a>
-          <div class="d-flex align-items-center">
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item">
-                <a class="nav-link active" href="{% url 'blog-home' %}">Feed
-                  <span class="visually-hidden">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'blog-about' %}">About</a>
-              </li>
-              {% if user.is_authenticated %}
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Groups</a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'club-list' %}">All Groups</a>
-                    <a class="dropdown-item" href="{% url 'my-clubs' %}">My Groups</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{% url 'create-club' %}">New Group</a>
-                  </div>
-                </li>
-                <li class="nav-item d-flex align-items-center dropdown">
-                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle nav-img" src="{{ user.profile.image.url }}" alt="Profile Image" style="height:30px; width:30px; object-fit:cover;">
-                  </a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
-                    <form method="POST" action="{% url 'logout' %}" class="m-0">
-                      {% csrf_token %}
-                      <button type="submit" class="dropdown-item">Logout</button>
-                    </form>
-                  </div>
-                </li>                
-              {% else %}
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Join</a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'login' %}">Login</a>
-                    <a class="dropdown-item" href="{% url 'register' %}">Register</a>
-                  </div>
-                </li>
-              {% endif %}
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>-->
+  </header>-->
 
     <main role="main" class="container">
         <div class="row">
