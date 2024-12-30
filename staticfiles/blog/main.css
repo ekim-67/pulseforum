@@ -40,9 +40,9 @@ ul {
   background: #ffffff;
   padding: 10px 20px;
   border: 1px solid #dddddd;
-  border-radius: 100px;
+  border-radius: 20px;
   margin-bottom: 20px;
-  transition: box-shadow 0.3s ease-in-out; /* Smooth transition */
+  
 }
 
 .content-section:hover {
