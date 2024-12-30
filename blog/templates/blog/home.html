@@ -3,11 +3,11 @@
     {% if user.is_authenticated %}
         {% for post in posts %}
             <article class="media content-section d-flex align-items-center">
-                <img class="rounded-circle article-img mr-3" src="{{ post.club.banner.url }}">
+                <img class="rounded-circle article-img mr-3" src="{{ post.club.banner.url }}" href="{% url 'club-home' pk=post.club.pk %}">
                 <div class="media-body">
                     <div class="d-flex align-items-center article-metadata">
-                        <a class="mr-2" href="{% url 'club-home' pk=post.club.pk %}">{{ post.club.name }}</a>
-                        <a class="mr-2 text_white hover_black" href="{% url 'profile-with-pk' pk=post.author.id %}">{{ post.author }}</a>
+                        <a class="mr-5" href="{% url 'club-home' pk=post.club.pk %}">{{ post.club.name }}</a>
+                        <a class="mr-5 text_white hover_black" href="{% url 'profile-with-pk' pk=post.author.id %}">{{ post.author }}</a>
                         <small class="text-muted">{{ post.date_posted|date:"F d, Y"}}</small>
                     </div>
                     <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
