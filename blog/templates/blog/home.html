@@ -6,8 +6,8 @@
                 <img class="rounded-circle article-img mr-3" src="{{ post.club.banner.url }}">
                 <div class="media-body">
                     <div class="d-flex align-items-center article-metadata">
-                        <a href="{% url 'club-home' pk=post.club.pk %}" style="text-decoration: none;">{{ post.club.name }}</a>
-                        <a href="{% url 'profile-with-pk' pk=post.author.id %}" style="text-decoration: none;">{{ post.author }}</a>
+                        <a href="{% url 'club-home' pk=post.club.pk %}" style="text-decoration: none;">{{ post.club.name }} • </a>
+                        <a href="{% url 'profile-with-pk' pk=post.author.id %}" style="text-decoration: none;">{{ post.author }} • </a>
                         <small class="text-muted">{{ post.date_posted|date:"F d, Y"}}</small>
                     </div>
                     <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
