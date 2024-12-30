@@ -44,6 +44,16 @@
                 <a class="nav-item nav-link" href="{% url 'club-list' %}">Groups</a>
               </div>
 
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle show" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Groups</a>
+                <div class="dropdown-menu show" data-bs-popper="static">
+                  <a class="dropdown-item" href="#">All Groups</a>
+                  <a class="dropdown-item" href="#">My Groups</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">New Group</a>
+                </div>
+              </li>
+
               <div class="navbar-nav">
                 {% if user.is_authenticated %}
                   <a class="nav-item nav-link" href="{% url 'profile' %}">My Profile</a>
