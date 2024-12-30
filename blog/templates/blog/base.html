@@ -55,10 +55,13 @@
                     <a class="dropdown-item" href="{% url 'create-club' %}">New Group</a>
                   </div>
                 </li>
-                <li class="nav-item d-flex align-items-center">
-                  <a class="nav-link p-0" href="{% url 'profile' %}">
+                <li class="nav-item d-flex align-items-center dropdown">
+                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                     <img class="rounded-circle nav-img" src="{{ user.profile.image.url }}" alt="Profile Image" style="height:30px; width:30px; object-fit:cover;">
                   </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                  </div>
                 </li>
                 <form class="d-inline" method="POST" action="{% url 'logout' %}">
                   {% csrf_token %}
@@ -77,7 +80,6 @@
           </div>
         </div>
       </nav>
-      
     </header>
     <!--<header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-black fixed-top px-4" data-bs-theme="dark">
