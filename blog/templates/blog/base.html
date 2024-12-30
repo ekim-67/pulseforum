@@ -47,9 +47,6 @@
                 <a class="nav-link" href="{% url 'blog-about' %}">About</a>
               </li>
               {% if user.is_authenticated %}
-                <li class="nav-item">
-                  <a class="nav-item nav-link" href="{% url 'profile' %}">My Profile</a>
-                </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Groups</a>
                   <div class="dropdown-menu">
@@ -58,6 +55,11 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{% url 'create-club' %}">New Group</a>
                   </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-item nav-link" href="{% url 'profile' %}">
+                    <img class="rounded-circle article-img" src="{{ user.profile.image.url }}">
+                  </a>
                 </li>
                 <form method="POST" action="{% url 'logout' %}">
                   {% csrf_token %}
