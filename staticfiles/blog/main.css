@@ -119,6 +119,7 @@ a.article-title:hover {
   z-index: 1; /* Ensure it sits above the content */
   text-decoration: none; /* Remove underline */
 }
+
 .media-body {
   position: relative; /* Needed for absolute positioning inside */
 }

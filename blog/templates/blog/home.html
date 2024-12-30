@@ -6,18 +6,15 @@
                 <a href="{% url 'club-home' pk=post.club.pk %}">
                     <img class="rounded-circle article-img mr-3" src="{{ post.club.banner.url }}" alt="{{ post.club.name }}">
                 </a>
-
-                <a href="{% url 'post-detail' post.id %}" class="stretched-link-container">
-                    <div class="media-body position-relative">
-                        <div class="d-flex align-items-center article-metadata">
-                            <a class="article-metadata-content" href="{% url 'club-home' pk=post.club.pk %}"><strong>{{ post.club.name }}</strong></a> •
-                            <a class="article-metadata-content" href="{% url 'profile-with-pk' pk=post.author.id %}">{{ post.author }}</a> •
-                            <small class="text-muted article-metadata-content">{{ post.date_posted|date:"F d, Y" }}</small>
-                        </div>
-                        <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
-                        <p class="article-content">{{ post.content }}</p>
+                <div class="media-body" data-url="{% url 'post-detail' post.id %}">
+                    <div class="d-flex align-items-center article-metadata">
+                        <a class="article-metadata-content" href="{% url 'club-home' pk=post.club.pk %}"><strong>{{ post.club.name }}</strong></a> •
+                        <a class="article-metadata-content" href="{% url 'profile-with-pk' pk=post.author.id %}">{{ post.author }}</a> •
+                        <small class="text-muted article-metadata-content">{{ post.date_posted|date:"F d, Y" }}</small>
                     </div>
-                </a>
+                    <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
+                    <p class="article-content">{{ post.content }}</p>
+                </div>
             </article>
         {% endfor %}
         
