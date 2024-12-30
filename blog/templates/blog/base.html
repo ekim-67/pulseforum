@@ -61,12 +61,14 @@
                   </a>
                   <div class="dropdown-menu">
                     <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                    <a class="dropdown item">
+                      <form class="d-inline" method="POST" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-link nav-link" style="background:transparent; border:none;">Logout</button>
+                      </form>
+                    </a>
                   </div>
                 </li>
-                <form class="d-inline" method="POST" action="{% url 'logout' %}">
-                  {% csrf_token %}
-                  <button type="submit" class="btn btn-link nav-link" style="background:transparent; border:none;">Logout</button>
-                </form>
               {% else %}
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Groups</a>
