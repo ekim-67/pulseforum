@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     container.addEventListener('click', (event) => {
         // Check if the clicked element or one of its parents has the 'media-body' class
-        const mediaBody = event.target.closest('.media-body[data-url]');
+        const mediaBody = event.target.closest('.content-section[data-url]');
         if (mediaBody) {
             const url = mediaBody.getAttribute('data-url');
             if (url) {
