@@ -69,6 +69,11 @@ a.article-title:hover {
 }
 
 .article-metadata {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
   padding-bottom: 1px;
   margin-bottom: 4px;
   border-bottom: 1px solid #e3e3e3
