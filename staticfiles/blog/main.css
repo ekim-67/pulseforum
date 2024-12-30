@@ -74,7 +74,7 @@ a.article-title:hover {
   color: inherit;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 0.75rem;
   padding-bottom: 1px;
   margin-bottom: 4px;
   /*border-bottom: 1px solid #e3e3e3*/
@@ -88,7 +88,7 @@ a.article-title:hover {
 
 .article-metadata-content {
   text-decoration: none;
-  font-size: 10px;
+  font-size: 18px;
 }
 
 .article-svg {

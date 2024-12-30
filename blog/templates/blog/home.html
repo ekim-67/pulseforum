@@ -6,9 +6,9 @@
                 <img class="rounded-circle article-img mr-3" src="{{ post.club.banner.url }}">
                 <div class="media-body">
                     <div class="d-flex align-items-center article-metadata">
-                        <a class = "article-metadata-content" href="{% url 'club-home' pk=post.club.pk %}">{{ post.club.name }}</a>  •
-                        <a class = "article-metadata-content" href="{% url 'profile-with-pk' pk=post.author.id %}">{{ post.author }}</a>  •
-                        <small class="text-muted">{{ post.date_posted|date:"F d, Y"}}</small>
+                        <a class = "article-metadata-content" href="{% url 'club-home' pk=post.club.pk %}">{{ post.club.name }}</a> •
+                        <a class = "article-metadata-content" href="{% url 'profile-with-pk' pk=post.author.id %}">{{ post.author }}</a> •
+                        <small class="text-muted article-metadata-content">{{ post.date_posted|date:"F d, Y"}}</small>
                     </div>
                     <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
                     <p class="article-content">{{ post.content }}</p>
