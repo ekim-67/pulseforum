@@ -1,10 +1,6 @@
 {% extends "blog/base.html" %}
 {% block content %}
     {% if user.is_authenticated %}
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
         {% for post in posts %}
             <article class="content-section d-flex align-items-center">
                 <img class="rounded-circle article-img mr-3" src="{{ post.club.banner.url }}">
