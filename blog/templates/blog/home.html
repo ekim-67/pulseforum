@@ -5,7 +5,7 @@
             <article class="media content-section">
                 <img class="rounded-circle article-img" src="{{ post.club.banner.url }}">
                 <div class="media-body">
-                    <div class="article-metadata">
+                    <div class="d-flex align-items-center article-metadata">
                         <a class="mr-2" href="{% url 'club-home' pk=post.club.pk %}">{{ post.club.name }}</a>
                         <a class="mr-2 text_white hover_black" href="{% url 'profile-with-pk' pk=post.author.id %}">{{ post.author }}</a>
                         <small class="text-muted">{{ post.date_posted|date:"F d, Y"}}</small>
