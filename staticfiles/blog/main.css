@@ -40,8 +40,13 @@ ul {
   background: #ffffff;
   padding: 10px 20px;
   border: 1px solid #dddddd;
-  border-radius: 3px;
+  border-radius: 100px;
   margin-bottom: 20px;
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
+
+.content-section:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
 }
 
 .article-title {
