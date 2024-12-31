@@ -31,12 +31,46 @@ ul {
   border: 1px solid #dddddd;
   border-radius: 10px;
   margin-bottom: 20px;
+  position: relative; /* Needed for the pseudo-element overlay */
+  overflow: hidden; /* Ensures the overlay stays within the boundaries */
+  transition: all 0.3s ease;
+}
+
+.content-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.05); /* Subtle grey */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1; /* Places the overlay on top of the background but under content */
+}
+
+.content-section:hover::before {
+  opacity: 1; /* Shows the grey overlay on hover */
+}
+
+.content-section > * {
+  position: relative;
+  z-index: 2; /* Ensures other content stays above the overlay */
+}
+
+/*
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .content-section:hover {
   background-color: rgba(0, 0, 0, 0.05);
-  /*box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);  */
-}
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);  
+}*/
 
 .article-title {
   color: #444444;
