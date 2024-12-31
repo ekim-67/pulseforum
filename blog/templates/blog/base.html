@@ -38,16 +38,16 @@
         <div class="d-flex align-items-center ms-auto">
           <ul class="navbar-nav d-flex align-items-center">
             <li class="nav-item">
-              <a class="nav-link {% if request.resolver_match.url_name == 'blog-home' %}active{% endif %}" href="{% url 'blog-home' %}">Feed
+              <a class="nav-link {% if active_page == 'home' %}active{% endif %}" href="{% url 'blog-home' %}">Feed
                 <span class="visually-hidden">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {% if request.resolver_match.url_name == 'blog-about' %}active{% endif %}" href="{% url 'blog-about' %}">About</a>
+              <a class="nav-link {% if active_page == 'club-home' %}active{% endif %}" href="{% url 'blog-about' %}">About</a>
             </li>
             {% if user.is_authenticated %}
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle {% if request.resolver_match.url_name in ['club-list', 'my-clubs', 'create-club'] %}active{% endif %}" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Groups</a>
+                <a class="nav-link dropdown-toggle {% if active_page == 'club-home' %}active{% endif %}" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Groups</a>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="{% url 'club-list' %}">All Groups</a>
                   <a class="dropdown-item" href="{% url 'my-clubs' %}">My Groups</a>
@@ -69,7 +69,7 @@
               </li>
             {% else %}
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle {% if request.resolver_match.url_name in ['login', 'register'] %}active{% endif %}" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Join</a>
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Join</a>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="{% url 'login' %}">Login</a>
                   <a class="dropdown-item" href="{% url 'register' %}">Register</a>

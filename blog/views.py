@@ -21,6 +21,7 @@ def home(request):
         'members': User.objects.all(),
         'club':club,
         'is_member':True,
+        'active_page': 'home',
     }
     #for the third argument, passing in a dictionary with a single entry -- pointing to a list of dictionaries inside it. 
 
@@ -40,6 +41,7 @@ def clubHome(request, pk):
         'club': club,
         'is_member': is_member,
         'owner': club.owner,
+        'active_page': 'club-home',
     }
     #for the third argument, passing in a dictionary with a single entry -- pointing to a list of dictionaries inside it. 
 
@@ -95,6 +97,7 @@ def club_list(request): #includes means of joining club
             'members': User.objects.all(),
             'club': chosen_club,
             'is_member': True,
+            'active_page': 'club-home',
         }
         return render(request, 'blog/club_home.html', context)
     
