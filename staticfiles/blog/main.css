@@ -34,6 +34,7 @@ ul {
   position: relative; /* Needed for the pseudo-element overlay */
   overflow: hidden; /* Ensures the overlay stays within the boundaries */
   transition: all 0.3s ease;
+  cursor:pointer;
 }
 
 .content-section::before {
