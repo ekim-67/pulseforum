@@ -213,5 +213,5 @@ def about(request):
 
     #for the third argument, passing in a single dictionary entry
 
-    return render(request, 'blog/about.html', {'title': 'About'})
+    return render(request, 'blog/about.html', {'title': 'About', 'active_page':'about'})
 

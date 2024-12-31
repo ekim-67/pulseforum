@@ -86,12 +86,12 @@
         <div class="d-flex align-items-center ms-auto">
           <ul class="navbar-nav d-flex align-items-center">
             <li class="nav-item">
-              <a class="nav-link active" href="{% url 'blog-home' %}">Feed
+              <a class="nav-link {% if active_page == 'home' %}active{% endif %}" href="{% url 'blog-home' %}">Feed
                 <span class="visually-hidden">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'blog-about' %}">About</a>
+              <a class="nav-link {% if active_page == 'about' %}active{% endif %}" href="{% url 'blog-about' %}">About</a>
             </li>
             {% if user.is_authenticated %}
               <li class="nav-item dropdown">
