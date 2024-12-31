@@ -25,19 +25,6 @@ ul {
   background-color: #5f788a;
 }
 
-/*
-.site-header .navbar-nav .nav-link {
-  color: #cbd5db;
-}
-
-.site-header .navbar-nav .nav-link:hover {
-  color: #ffffff;
-}
-
-.site-header .navbar-nav .nav-link.active {
-  font-weight: 500;
-}*/
-
 .content-section {
   background: #ffffff;
   padding: 10px 20px;
@@ -47,7 +34,8 @@ ul {
 }
 
 .content-section:hover {
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+  background-color: rgba(0, 0, 0, 0.05);
+  /*box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);  */
 }
 
 .article-title {
