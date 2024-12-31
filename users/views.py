@@ -37,6 +37,7 @@ def update_profile(request):
     context = {
         'u_form': u_form,
         'p_form': p_form,
+        'active_page': 'profile',
     }
 
     return render(request, 'users/update_profile.html', context)
@@ -53,7 +54,8 @@ def profile(request, pk=None):
 
     context = {
         'profile_user': user,
-        'posts': Post.objects.filter(author=author)
+        'posts': Post.objects.filter(author=author),
+        'active_page': 'profile',
     }
 
     return render(request, 'users/profile.html', context)
