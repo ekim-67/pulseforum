@@ -63,7 +63,7 @@ def create_club(request):
             return redirect('club-home', pk=new_club.id)
     else:
         form = ClubForm()
-    return render(request, 'blog/create_club.html', {'form':form})
+    return render(request, 'blog/create_club.html', {'form':form, 'active_page':'groups'})
 
 @login_required
 def update_club(request, club_id):
@@ -101,7 +101,7 @@ def club_list(request): #includes means of joining club
         }
         return render(request, 'blog/club_home.html', context)
     
-    return render(request, 'blog/club_list.html', {'clubs': clubs})
+    return render(request, 'blog/club_list.html', {'clubs': clubs, 'active_page':'groups'})
 
 class PostListView(ListView):
     model = Post #tells the ListView what model to query to create the list

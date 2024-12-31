@@ -95,7 +95,7 @@
             </li>
             {% if user.is_authenticated %}
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Groups</a>
+                <a class="nav-link dropdown-toggle {% if active_page == 'groups' %}active{% endif %}" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Groups</a>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="{% url 'club-list' %}">All Groups</a>
                   <a class="dropdown-item" href="{% url 'my-clubs' %}">My Groups</a>

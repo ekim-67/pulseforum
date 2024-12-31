@@ -74,6 +74,7 @@ def my_clubs(request, pk=None):
 
     context = {
         'profile_user': user,
+        'active_page':'groups',
     }
 
     return render(request, 'users/my_clubs.html', context)
