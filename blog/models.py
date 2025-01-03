@@ -5,7 +5,6 @@ from django.urls import reverse
 
 class Club(models.Model):
     name = models.CharField(max_length=100)
-    current_book = models.CharField(max_length=100, null=True)
     description = models.CharField(max_length=500, null=True)
     banner = models.ImageField(default='profile_pics/default-club_iFCZdbI.jpg', upload_to='profile_pics')
     owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True)

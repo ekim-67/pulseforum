@@ -7,7 +7,6 @@ class Profile(models.Model):
     #CASCADE - if user is deleted, then also delete profile
     image = models.ImageField(default='profile_pics/default-icon_RTHxOC0.jpg', upload_to='profile_pics')
     bio = models.TextField(default="There isn't much here...", blank=True)
-    favorite_book = models.TextField(blank=True)
     club = models.ManyToManyField(Club)
 
     def __str__(self):
