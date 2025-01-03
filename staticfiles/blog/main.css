@@ -107,6 +107,12 @@ a.article-title:hover {
   color:rgb(255, 255, 255);
 }
 
+.article-date {
+  text-decoration: none;
+  font-size: 13px;
+  color:rgb(255, 255, 255, 0.55);
+}
+
 .article-svg {
   width: 25px;
   height: 25px;
