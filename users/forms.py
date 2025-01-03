@@ -22,7 +22,7 @@ class UserUpdateForm(forms.ModelForm):
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['image', 'bio', 'favorite_book']
+        fields = ['image', 'bio']
 
 class CommentForm(forms.ModelForm):
     class Meta:
@@ -32,7 +32,7 @@ class CommentForm(forms.ModelForm):
 class ClubForm(forms.ModelForm):
     class Meta:
         model = Club
-        fields = ['name', 'current_book', 'description']
+        fields = ['name', 'description']
 
 class ClubUpdateForm(forms.ModelForm):
     class Meta:
