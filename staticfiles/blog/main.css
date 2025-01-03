@@ -107,10 +107,16 @@ a.article-title:hover {
   color:rgb(255, 255, 255);
 }
 
+.article-content a:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
 .article-date {
   text-decoration: none;
   font-size: 13px;
   color:rgb(255, 255, 255, 0.55);
+  align-items:right;
 }
 
 .article-svg {
