@@ -11,10 +11,10 @@
                     <div class="d-flex align-items-center article-metadata">
                         <a class="article-metadata-content" href="{% url 'club-home' pk=post.club.pk %}"><b>{{ post.club.name }}</b></a> •
                         <a class="article-metadata-content" href="{% url 'profile-with-pk' pk=post.author.id %}">{{ post.author }}</a>
-                        <a class="article-date">{{ post.date_posted|date:"F d, Y" }}</a>
+                        <small class="article-date">{{ post.date_posted|date:"F d, Y" }}</a>
                     </div>
-                    <h4><small class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</small></h4>
-                    <p class="article-content">{{ post.content }}</p>
+                    <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
+                    <a class="article-content"><p>{{ post.content }}</p></a>
                 </div>
             </article>
         {% endfor %}
