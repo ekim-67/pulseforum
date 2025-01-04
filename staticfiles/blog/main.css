@@ -70,13 +70,23 @@ a.article-title:hover {
 
 .article-content {
   white-space: pre-line;
+  text-decoration: none;
   color:white;
+}
+
+.article-content a:hover {
+  color: #428bca;
+  text-decoration: none;
 }
 
 .article-img {
   height: 65px;
   width: 65px;
   margin-right: 16px;
+}
+
+.article-img:hover {
+  filter: hue-rotate(200deg) saturate(1.2);
 }
 
 .nav-img {
