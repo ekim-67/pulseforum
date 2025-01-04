@@ -74,7 +74,7 @@ a.article-title:hover {
   color:white;
 }
 
-.article-content a:hover {
+.article-content p:hover {
   color: #428bca;
   text-decoration: none;
 }
