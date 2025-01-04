@@ -25,22 +25,19 @@
                 </div>
             </article>
 
-            {% for post in posts %}
-                <!--<article class="media content-section">
-                    <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
-                    <div class="media-body">
-                    <div class="article-metadata">
-                        <a class="mr-2 text_white hover_black" href="{% url 'profile-with-pk' pk=post.author.pk %}">{{ post.author }}</a>
-                        <small class="text-muted">{{ post.date_posted|date:"F d, Y"}}</small>
-                    </div>
-                    <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
-                    <p class="article-content">{{ post.content }}</p>
-                    </div>
-                </article>-->
+            <article class="content-section d-flex align-items-center" data-url="{% url 'post-detail' post.id %}">
+                <a href="{% url 'club-home' pk=post.club.pk %}">
+                    <img class="rounded-circle article-img mr-3" src="{{ user.profile.image.url }}">
+                </a>
+                <div class="media-body">
+                    <a class="article-content"><p class="article-content"><a href="{% url 'post-create' club_id=club.pk%}">Add to the discussion</a></p></a>
+                </div>
+            </article>
 
+            {% for post in posts %}
                 <article class="content-section d-flex align-items-center" data-url="{% url 'post-detail' post.id %}">
                     <a href="{% url 'club-home' pk=post.club.pk %}">
-                        <img class="rounded-circle article-img mr-3" src="{{ post.club.banner.url }}" alt="{{ post.club.name }}">
+                        <img class="rounded-circle article-img mr-3" src="{{ post.author.profile.image.url }}">
                     </a>
                     <div class="media-body">
                         <div class="d-flex align-items-center article-metadata">
