@@ -26,7 +26,7 @@
             </article>
 
             {% for post in posts %}
-                <article class="media content-section">
+                <!--<article class="media content-section">
                     <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
                     <div class="media-body">
                     <div class="article-metadata">
@@ -35,6 +35,20 @@
                     </div>
                     <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
                     <p class="article-content">{{ post.content }}</p>
+                    </div>
+                </article>-->
+
+                <article class="content-section d-flex align-items-center" data-url="{% url 'post-detail' post.id %}">
+                    <a href="{% url 'club-home' pk=post.club.pk %}">
+                        <img class="rounded-circle article-img mr-3" src="{{ post.club.banner.url }}" alt="{{ post.club.name }}">
+                    </a>
+                    <div class="media-body">
+                        <div class="d-flex align-items-center article-metadata">
+                            <a class="article-metadata-content" href="{% url 'profile-with-pk' pk=post.author.id %}">{{ post.author }}</a>
+                            <small class="article-date">{{ post.date_posted|date:"F d, Y" }}</a>
+                        </div>
+                        <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
+                        <a class="article-content"><p>{{ post.content }}</p></a>
                     </div>
                 </article>
             {% endfor %}
