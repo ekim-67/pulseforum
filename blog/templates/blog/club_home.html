@@ -7,11 +7,10 @@
                     <h1> {{ club.name }} </h1>
                 </div>
                 <img class="rounded-circle account-img" src="{{ club.banner.url }}">
-                <a class="article-content"> Description: {{ club.description }} </a> <p></p>
-                <a class="article-content" href = "{% url 'profile-with-pk' pk=club.owner.pk %}"> Owner: {{ club.owner }} </a>
-
-                <!--<div class="media-body"> {{ club.description }}</div>
-                <div class="media-body"> Owner: <a href = "{% url 'profile-with-pk' pk=club.owner.pk %}">{{ club.owner }}</a></div>-->
+                <div class="media-body">
+                    <a class="article-content"> Description: {{ club.description }} </a>
+                    <a class="article-content" href = "{% url 'profile-with-pk' pk=club.owner.pk %}"> Owner: {{ club.owner }} </a>
+                </div>
 
                 {% if club.owner == user %}
                     <div>
