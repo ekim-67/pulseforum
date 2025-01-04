@@ -4,9 +4,10 @@
     <article class="media content-section">
         <div class="media-body">
         <div class="article-metadata">
-            <a class="mr-2" href="{% url 'profile-with-pk' pk=post.author.pk %}">{{ author }}</a>
-            <small class="text-muted">{{ post.date_posted|date:"F d, Y"}}</small><p></p>
-            <a class="mr-2" href="{% url 'club-home' pk=post.club.pk %}">{{ post.club.name }}</a>
+            <a class="article-metadata-content" href="{% url 'club-home' pk=post.club.pk %}">{{ post.club.name }}</a> •
+            <a class="article-metadata-content" href="{% url 'profile-with-pk' pk=post.author.pk %}">{{ author }}</a>
+            <small class="article-date">{{ post.date_posted|date:"F d, Y"}}</small><p></p>
+            
         </div>
         <h2 class="article-title">{{ post.title }}</h2>
         <p class="article-content">{{ post.content }}</p>
