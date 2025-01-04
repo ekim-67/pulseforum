@@ -8,8 +8,10 @@
                 </div>
                 <img class="rounded-circle account-img" src="{{ club.banner.url }}">
                 <div class="media-body">
-                    <a class="article-content"> Description: {{ club.description }} </a>
-                    <a class="article-content" href = "{% url 'profile-with-pk' pk=club.owner.pk %}"> Owner: {{ club.owner }} </a>
+                    <div class="d-flex align-items-center article-metadata">
+                        <a class="article-content"> Description: {{ club.description }} </a>
+                        <a class="article-content" href = "{% url 'profile-with-pk' pk=club.owner.pk %}"> Owner: {{ club.owner }} </a>
+                    </div>
                 </div>
 
                 {% if club.owner == user %}
