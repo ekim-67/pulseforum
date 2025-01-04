@@ -37,18 +37,21 @@
     <div class="content-section">
         <h4>Comments</h4>
         {% for comment in post.comment_set.all %}
-            <article class="media content-section">
+            <article class="content-section d-flex align-items-center" data-url="{% url 'post-detail' post.id %}">
+                <a href="{% url 'profile-with-pk' pk=comment.author.pk %}">
+                    <img class="rounded-circle article-img mr-3" src="{{ post.author.profile.image.url }}">
+                </a>
                 <div class="media-body">
-                <div class="article-metadata">
-                    <a class="mr-2" href="{% url 'profile-with-pk' pk=comment.author.pk %}">{{ comment.author }}</a>
-                    <small class="text-muted">{{ comment.date_posted|date:"F d, Y"}}</small>
-                </div>
-                <p class="article-content">{{ comment.content }}</p>
-                {% if comment.author == user %}
+                    <div class="d-flex align-items-center article-metadata">
+                        <a class="article-metadata-content" href="{% url 'profile-with-pk' pk=comment.author.pk %}">{{ comment.author }}</a>
+                        <small class="article-date">{{ post.date_posted|date:"F d, Y" }}</a>
+                    </div>
+                    <a class="article-content"><p>{{ comment.content }}</p></a>
+                    {% if comment.author == user %}
                     <div>
                         <a class = "btn btn-danger btn-sm mt-1 mb-1" href="{% url 'comment-delete' comment.pk %}">Delete</a>
                     </div>
-                {% endif %}
+                    {% endif %}
                 </div>
             </article>
         {% endfor %}
