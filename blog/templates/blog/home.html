@@ -14,7 +14,7 @@
                         <small class="article-date">{{ post.date_posted|date:"F d, Y" }}</a>
                     </div>
                     <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
-                    <a class="article-content"><p>{{ post.content }}</p></a>
+                    <a class="article-content">{{ post.content }}</a>
                 </div>
             </article>
         {% endfor %}
