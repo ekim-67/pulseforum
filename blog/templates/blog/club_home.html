@@ -30,7 +30,7 @@
                     <img class="rounded-circle article-img mr-3" src="{{ user.profile.image.url }}">
                 </a>
                 <div class="media-body">
-                    <a class="article-content"><p class="article-content"><a href="{% url 'post-create' club_id=club.pk%}">Add to the discussion</a></p></a>
+                    <a class="article-content" href="{% url 'post-create' club_id=club.pk%}">Add to the discussion</a>
                 </div>
             </article>
 
