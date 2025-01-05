@@ -66,7 +66,7 @@
               </li>                
             {% else %}
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle {% if active_page == 'join' %}active{% endif %}" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Join</a>
+                <a class="nav-link dropdown-toggle {% if request.path == '/login/' or active_page == 'join' %}active{% endif %}" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Join</a>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="{% url 'login' %}">Login</a>
                   <a class="dropdown-item" href="{% url 'register' %}">Register</a>

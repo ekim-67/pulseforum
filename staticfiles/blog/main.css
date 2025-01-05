@@ -163,6 +163,7 @@ a.article-title:hover {
 
 small.form-text.text-muted {
   color: rgba(255, 255, 255, 0.55) !important;
+  font-size: 13px !important;
 }
 
 .form-group label {
