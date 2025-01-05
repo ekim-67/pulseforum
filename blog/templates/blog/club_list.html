@@ -9,10 +9,14 @@
             {% csrf_token %}
             {% for club in clubs %}
                 <img class="rounded-circle account-img" src="{{ club.banner.url }}" />
-                <input type="submit" name="btn" value="{{ club.name }}" />
-                <p></p>
-                Description: {{ club.description }}
-                <p></p>
+                
+                <input type="hidden" name="btn" value="{{ club.name }}" />
+                <button type="submit">Join</button>
+
+                <div class="article-content">
+                    Description: {{ club.description }}<p></p>
+                    Name: {{ club.name }}
+                </div>
             {% endfor %}
         </form>
     </div>
