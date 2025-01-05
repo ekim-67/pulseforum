@@ -161,9 +161,8 @@ a.article-title:hover {
   font-size: 2.5rem;
 }
 
-.form-group .form-text.text-muted {
-  color: rgb(255, 255, 255, 0.55);
-  margin-top: 5px;
+small.form-text.text-muted {
+  color: rgba(255, 255, 255, 0.55) !important;
 }
 
 .form-group label {
