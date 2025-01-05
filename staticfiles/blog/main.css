@@ -166,6 +166,6 @@ help-text {
   margin-bottom: 5px;
 }
 
-.formclass { 
-  color:white;
+.form-group label {
+  color: white;
 }
