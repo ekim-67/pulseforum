@@ -64,7 +64,7 @@ ul {
   z-index: 2; /* Ensures other content stays above the overlay */
 }
 
-a.content-section:hover {
+.content-section a:hover {
   color: #428bca;
   text-decoration: none;
 }
