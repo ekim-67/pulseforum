@@ -40,7 +40,11 @@ ul {
 .content-section a{
   color:white;
   text-decoration: none;
+}
 
+.content-section form-group{
+  color:white;
+  text-decoration: none;
 }
 
 .content-section::before {
