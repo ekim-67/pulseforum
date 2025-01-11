@@ -94,15 +94,27 @@
           <!-- Sidebar Area -->
           <div class="col-md-4">
             <div class="sidebar">
-                <div class="card">
-                    <div class="card-header">
+                <div class="content-section">
+                    <!--<div class="card-header">
                         Categories
-                    </div>
+                    </div>-->
+                    <h5>My Groups</h5>
+
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><a href="#">Technology</a></li>
+                      {% for clubname in user.profile.club.all %}
+                        <article class="content-section d-flex align-items-center">
+                            <a href="{% url 'club-home' pk=clubname.pk %}">
+                                <img class="rounded-circle article-img mr-3" src="{{ clubname.banner.url }}" alt="{{ post.club.name }}">
+                            </a>
+                            <div class="text-secondary d-flex flex-column ml-3 justify-content-center">
+                                <p><a href="{% url 'club-home' pk=clubname.pk %}">{{ clubname.name }}</a></p>
+                            </div>
+                        </article>
+                      {% endfor %}
+                        <!--<li class="list-group-item"><a href="#">Technology</a></li>
                         <li class="list-group-item"><a href="#">Health</a></li>
                         <li class="list-group-item"><a href="#">Education</a></li>
-                        <li class="list-group-item"><a href="#">Sports</a></li>
+                        <li class="list-group-item"><a href="#">Sports</a></li>-->
                     </ul>
                 </div>
             </div>
