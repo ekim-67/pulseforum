@@ -19,7 +19,22 @@
             {% if posts %}
                 <h4>Current Posts</h4>
                 {% for post in posts %}
-                    <article class="media content-section">
+                    <article class="content-section d-flex align-items-center" data-url="{% url 'post-detail' post.id %}">
+                        <a href="{% url 'club-home' pk=post.club.pk %}">
+                            <img class="rounded-circle article-img mr-3" src="{{ post.club.banner.url }}" alt="{{ post.club.name }}">
+                        </a>
+                        <div class="media-body">
+                            <div class="d-flex align-items-center article-metadata">
+                                <a class="article-metadata-content" href="{% url 'club-home' pk=post.club.pk %}"><b>{{ post.club.name }}</b></a> •
+                                <a class="article-metadata-content" href="{% url 'profile-with-pk' pk=post.author.id %}">{{ post.author }}</a>
+                                <small class="article-date">{{ post.date_posted|date:"F d, Y" }}</a>
+                            </div>
+                            <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
+                            <a class="article-content"><p>{{ post.content }}</p></a>
+                        </div>
+                    </article>
+
+                    <!--<article class="media content-section">
                         <div class="media-body">
                         <div class="article-metadata">
                             <small class="text-muted">{{ post.date_posted|date:"F d, Y"}}</small>
@@ -28,7 +43,7 @@
                         <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
                         <p class="article-content">{{ post.content }}</p>
                         </div>
-                    </article>
+                    </article>-->
                 {% endfor %}
             {% else %}
                 <small class="text-muted">
@@ -41,7 +56,6 @@
                         <h5>{{ profile_user.username }} is a member of:</h5>
                         {% for clubname in profile_user.profile.club.all %}
                             <p class="text-secondary"><a href="{% url 'club-home' pk=clubname.pk %}">{{ clubname.name }}</a></p>
-                            <!--<input type="submit" name="btn" value="{{ clubname.name }}" />-->
                         {% endfor %}
                     </div>
                 </div>
