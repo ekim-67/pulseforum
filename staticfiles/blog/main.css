@@ -203,3 +203,22 @@ small.form-text.text-muted {
 .tab-pane {
   color: black !important;
 }
+
+.accordian-button {
+  color:white; 
+  background-color: black; 
+  border-color:black;
+  background: #000000;
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
+
+.accordian-body {
+  background-color: black; 
+  border-color:black;
+  background: #000000;
+  padding: 10px 20px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
