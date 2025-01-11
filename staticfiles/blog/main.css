@@ -222,7 +222,7 @@ small.form-text.text-muted {
   margin-bottom: 20px;
 }
 
-.accordion-header {
+*.accordion-header {
   color:white; 
   background-color: black; 
   border-color:black;
