@@ -10,6 +10,22 @@
                 <p class="text-secondary">{{ profile_user.profile.bio }}</p>
             </div>
         </div>
+
+        <div class="content-section">
+            <div class="media">
+                <div class="media-body">
+                    <h5>{{ profile_user.username }}'s Groups:</h5>
+                    {% for clubname in profile_user.profile.club.all %}
+                        <article class="content-section d-flex align-items-center" data-url="{% url 'post-detail' post.id %}">
+                            <a href="{% url 'club-home' pk=post.club.pk %}">
+                                <img class="rounded-circle article-img mr-3" src="{{ post.club.banner.url }}" alt="{{ post.club.name }}">
+                            </a>
+                            <p class="text-secondary"><a href="{% url 'club-home' pk=clubname.pk %}">{{ clubname.name }}</a></p>
+                        </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
         
         {% if profile_user == user %}
             <a href="{% url 'update-profile' %}"><button>Edit Profile</button></a>
@@ -26,40 +42,18 @@
                         <div class="media-body">
                             <div class="d-flex align-items-center article-metadata">
                                 <a class="article-metadata-content" href="{% url 'club-home' pk=post.club.pk %}"><b>{{ post.club.name }}</b></a> •
-                                <a class="article-metadata-content" href="{% url 'profile-with-pk' pk=post.author.id %}">{{ post.author }}</a>
                                 <small class="article-date">{{ post.date_posted|date:"F d, Y" }}</a>
                             </div>
                             <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
                             <a class="article-content"><p>{{ post.content }}</p></a>
                         </div>
                     </article>
-
-                    <!--<article class="media content-section">
-                        <div class="media-body">
-                        <div class="article-metadata">
-                            <small class="text-muted">{{ post.date_posted|date:"F d, Y"}}</small>
-                            <a class="mr-2" href="{% url 'club-home' pk=post.club.pk %}">{{ post.club.name }}</a>
-                        </div>
-                        <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
-                        <p class="article-content">{{ post.content }}</p>
-                        </div>
-                    </article>-->
                 {% endfor %}
             {% else %}
                 <small class="text-muted">
                     <p>There isn't much here...</p>
                 </small>
             {% endif %}
-            <div class="content-section">
-                <div class="media">
-                    <div class="media-body">
-                        <h5>{{ profile_user.username }} is a member of:</h5>
-                        {% for clubname in profile_user.profile.club.all %}
-                            <p class="text-secondary"><a href="{% url 'club-home' pk=clubname.pk %}">{{ clubname.name }}</a></p>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 {% endblock content %}
