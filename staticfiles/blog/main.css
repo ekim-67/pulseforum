@@ -204,7 +204,7 @@ small.form-text.text-muted {
   color: black !important;
 }
 
-.accordian-button {
+.accordion-button {
   color:white; 
   background-color: black; 
   border-color:black;
@@ -213,7 +213,7 @@ small.form-text.text-muted {
   border-radius: 10px;
 }
 
-.accordian-body {
+.accordion-body {
   background-color: black; 
   border-color:black;
   background: #000000;
