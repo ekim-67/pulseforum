@@ -99,12 +99,11 @@
                         Categories
                     </div>-->
                     <h5>My Groups</h5>
-
                     <ul class="list-group list-group-flush">
                       {% for clubname in user.profile.club.all %}
                         <article class="content-section d-flex align-items-center">
                             <a href="{% url 'club-home' pk=clubname.pk %}">
-                                <img class="rounded-circle article-img mr-3" src="{{ clubname.banner.url }}" alt="{{ post.club.name }}">
+                                <img class="rounded-circle side-img mr-3" src="{{ clubname.banner.url }}" alt="{{ post.club.name }}">
                             </a>
                             <div class="text-secondary d-flex flex-column ml-3 justify-content-center">
                                 <p><a href="{% url 'club-home' pk=clubname.pk %}">{{ clubname.name }}</a></p>
