@@ -181,3 +181,19 @@ small.form-text.text-muted {
   margin-top: 10px;
   font-size: 13px;
 }
+
+.nav-tabs .nav-link {
+  background-color: black !important;
+  color: white !important;
+  border: 1px solid white !important;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: white !important;
+  color: black !important;
+  border: 1px solid white !important;
+}
+
+.tab-pane {
+  color: black !important;
+}
