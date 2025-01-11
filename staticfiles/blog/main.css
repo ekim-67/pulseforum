@@ -110,6 +110,12 @@ a.article-title:hover {
   margin-right: 16px;
 }
 
+.side-img {
+  height: 30px;
+  width: 30px;
+  margin-right: 16px;
+}
+
 .article-img:hover {
   filter: hue-rotate(200deg) saturate(1.2);
 }
