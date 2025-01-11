@@ -17,8 +17,8 @@
                     <h5>{{ profile_user.username }}'s Groups:</h5>
                     {% for clubname in profile_user.profile.club.all %}
                         <article class="content-section d-flex align-items-center">
-                            <a href="{% url 'club-home' pk=post.club.pk %}">
-                                <img class="rounded-circle article-img mr-3" src="{{ post.club.banner.url }}" alt="{{ post.club.name }}">
+                            <a href="{% url 'club-home' pk=clubname.pk %}">
+                                <img class="rounded-circle article-img mr-3" src="{{ clubname.banner.url }}" alt="{{ post.club.name }}">
                             </a>
                             <p class="text-secondary"><a href="{% url 'club-home' pk=clubname.pk %}">{{ clubname.name }}</a></p>
                         </article>
