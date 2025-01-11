@@ -25,6 +25,16 @@ ul {
   background-color: #5f788a;
 }
 
+.tab-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  position: relative; /* Needed for the pseudo-element overlay */
+  overflow: hidden; /* Ensures the overlay stays within the boundaries */
+}
+
 .content-section {
   background: #000000;
   padding: 10px 20px;
