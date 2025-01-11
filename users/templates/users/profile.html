@@ -27,8 +27,7 @@
         </ul>
 
         <div id="myTabContent" class="tab-content">
-            <div class="tab-pane fade active show" id="home" role="tabpanel">
-                <div class="tab-section">
+            <div class="tab-pane fade active show" id="home" role="tabpanel" style="color: rgba(255, 255, 255, 0.55) !important;">
                     <div class="media">
                         <div class="media-body">
                             {% for clubname in profile_user.profile.club.all %}
@@ -41,10 +40,8 @@
                             {% endfor %}
                         </div>
                     </div>
-                </div>
             </div>
-            <div class="tab-pane fade" id="profile" role="tabpanel">
-                <div class="tab-section">
+            <div class="tab-pane fade" id="profile" role="tabpanel" style="color: rgba(255, 255, 255, 0.55) !important;">
                     {% if posts %}
                         {% for post in posts %}
                             <article class="content-section d-flex align-items-center" data-url="{% url 'post-detail' post.id %}">
@@ -66,7 +63,6 @@
                             <p>There isn't much here...</p>
                         </small>
                     {% endif %}    
-                </div>
             </div>
         </div>
 
