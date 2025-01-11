@@ -2,7 +2,8 @@
 {% load crispy_forms_tags %}
 {% block content %}
     <div class="content-section">
-
+        <p></p>
+        <p></p>
         <div class="media d-flex align-items-center">
             <img class="rounded-circle account-img" src="{{ profile_user.profile.image.url }}">
             <div class="d-flex flex-column ml-3 justify-content-center">
@@ -16,20 +17,6 @@
                 <a href="{% url 'update-profile' %}"><button class="btn btn-info mt-3 mb-3">Edit Profile</button></a>
             {% endif %}
         </div>
-        
-        <!--
-        <div class="media">
-            <img class="rounded-circle account-img" src="{{ profile_user.profile.image.url }}">
-            <h5 class="account-heading" style="color: white;">{{ profile_user.username }}</h3>
-            <div class="media-body">
-                <h6>{{ profile_user.email }}</h6>
-                <h6>{{ profile_user.profile.bio }}</h6>
-            </div>
-            {% if profile_user == user %}
-                <a href="{% url 'update-profile' %}"><button class="btn btn-info mt-3 mb-3">Edit Profile</button></a>
-            {% endif %}
-        </div>-->
-
         <p></p>
         <p></p>
 
