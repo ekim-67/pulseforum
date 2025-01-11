@@ -7,14 +7,14 @@
             <img class="rounded-circle account-img" src="{{ profile_user.profile.image.url }}">
             <div class="d-flex flex-column ml-3">
                 <h5 class="account-heading" style="color: white;">{{ profile_user.username }}</h5>
-                <div class="media-body">
-                    <h6>{{ profile_user.email }}</h6>
-                    <h6>{{ profile_user.profile.bio }}</h6>
-                </div>
-                {% if profile_user == user %}
-                    <a href="{% url 'update-profile' %}"><button class="btn btn-info mt-3 mb-3">Edit Profile</button></a>
-                {% endif %}
             </div>
+            <div class="media-body">
+                <h6>{{ profile_user.email }}</h6>
+                <h6>{{ profile_user.profile.bio }}</h6>
+            </div>
+            {% if profile_user == user %}
+                <a href="{% url 'update-profile' %}"><button class="btn btn-info mt-3 mb-3">Edit Profile</button></a>
+            {% endif %}
         </div>
         <!--
         <div class="media">
