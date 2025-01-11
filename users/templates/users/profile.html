@@ -38,7 +38,7 @@
                                     <a href="{% url 'club-home' pk=clubname.pk %}">
                                         <img class="rounded-circle article-img mr-3" src="{{ clubname.banner.url }}" alt="{{ post.club.name }}">
                                     </a>
-                                    <p class="text-secondary"><a href="{% url 'club-home' pk=clubname.pk %}">{{ clubname.name }}</a></p>
+                                    <p class="text-secondary d-flex flex-column ml-3 justify-content-center"><a href="{% url 'club-home' pk=clubname.pk %}">{{ clubname.name }}</a></p>
                                 </article>
                             {% endfor %}
                         </div>

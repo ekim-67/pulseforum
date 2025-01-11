@@ -9,7 +9,6 @@
             {% csrf_token %}
             {% for club in clubs %}
                 <img class="rounded-circle account-img" src="{{ club.banner.url }}" />
-                
                 <input type="hidden" name="btn" value="{{ club.name }}" />
                 <button type="submit">Join</button>
 
