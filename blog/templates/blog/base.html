@@ -80,7 +80,7 @@
   </header>
 
     <main role="main" class="container">
-        <div class="row">
+        <div class="row d-flex" style="flex-wrap: nowrap;">
           <div class="col-md-8" style="border: 1px solid red;">
             {% if messages %}
               {% for message in messages%}
@@ -92,7 +92,7 @@
             {% block content %}{% endblock %}
           </div>
           <!-- Sidebar Area -->
-          <div class="col-md-3" style="border: 1px solid blue;">
+          <div class="col-md-4" style="border: 1px solid blue;">
             <div class="sidebar sticky-top mt-4">
                 <div class="card">
                     <div class="card-header">
