@@ -19,15 +19,15 @@
 
         <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item" role="presentation">
-              <a class="nav-link active" data-bs-toggle="tab" href="#home" aria-selected="true" role="tab">{{ profile_user.username }}'s Groups:</a>
+              <a class="nav-link active" data-bs-toggle="tab" href="#home" aria-selected="true" role="tab" style="color: rgba(255, 255, 255, 0.55) !important;">{{ profile_user.username }}'s Groups:</a>
             </li>
             <li class="nav-item" role="presentation">
-              <a class="nav-link" data-bs-toggle="tab" href="#profile" aria-selected="false" role="tab" tabindex="-1">Profile</a>
+              <a class="nav-link" data-bs-toggle="tab" href="#profile" aria-selected="false" role="tab" tabindex="-1" style="color: rgba(255, 255, 255, 0.55) !important;">Profile</a>
             </li>
         </ul>
 
         <div id="myTabContent" class="tab-content">
-            <div class="tab-pane fade active show" id="home" role="tabpanel" style="color: rgba(255, 255, 255, 0.55) !important;">
+            <div class="tab-pane fade active show" id="home" role="tabpanel">
                     <div class="media">
                         <div class="media-body">
                             {% for clubname in profile_user.profile.club.all %}
@@ -41,7 +41,7 @@
                         </div>
                     </div>
             </div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" style="color: rgba(255, 255, 255, 0.55) !important;">
+            <div class="tab-pane fade" id="profile" role="tabpanel">
                     {% if posts %}
                         {% for post in posts %}
                             <article class="content-section d-flex align-items-center" data-url="{% url 'post-detail' post.id %}">
