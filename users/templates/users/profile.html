@@ -6,8 +6,8 @@
             <img class="rounded-circle account-img" src="{{ profile_user.profile.image.url }}">
             <div class="media-body">
                 <h5 class="account-heading" style="color: white;">{{ profile_user.username }}</h3>
-                <p class="text-secondary" style="color: white;">{{ profile_user.email }}</p>
-                <p class="text-secondary" style="color: white;">{{ profile_user.profile.bio }}</p>
+                <h6>{{ profile_user.email }}</h6>
+                <h6>{{ profile_user.profile.bio }}</h6>
             </div>
             {% if profile_user == user %}
                 <a href="{% url 'update-profile' %}"><button class="btn btn-info mt-3 mb-3">Edit Profile</button></a>
@@ -28,7 +28,7 @@
 
         <div id="myTabContent" class="tab-content">
             <div class="tab-pane fade active show" id="home" role="tabpanel">
-                <div class="content-section" style="color: white;">
+                <div class="tab-section">
                     <div class="media">
                         <div class="media-body">
                             {% for clubname in profile_user.profile.club.all %}
@@ -44,27 +44,29 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="profile" role="tabpanel">
-                {% if posts %}
-                    {% for post in posts %}
-                        <article class="content-section d-flex align-items-center" data-url="{% url 'post-detail' post.id %}">
-                            <a href="{% url 'club-home' pk=post.club.pk %}">
-                                <img class="rounded-circle article-img mr-3" src="{{ post.club.banner.url }}" alt="{{ post.club.name }}">
-                            </a>
-                            <div class="media-body">
-                                <div class="d-flex align-items-center article-metadata">
-                                    <a class="article-metadata-content" href="{% url 'club-home' pk=post.club.pk %}"><b>{{ post.club.name }}</b></a> •
-                                    <small class="article-date">{{ post.date_posted|date:"F d, Y" }}</a>
+                <div class="tab-section">
+                    {% if posts %}
+                        {% for post in posts %}
+                            <article class="content-section d-flex align-items-center" data-url="{% url 'post-detail' post.id %}">
+                                <a href="{% url 'club-home' pk=post.club.pk %}">
+                                    <img class="rounded-circle article-img mr-3" src="{{ post.club.banner.url }}" alt="{{ post.club.name }}">
+                                </a>
+                                <div class="media-body">
+                                    <div class="d-flex align-items-center article-metadata">
+                                        <a class="article-metadata-content" href="{% url 'club-home' pk=post.club.pk %}"><b>{{ post.club.name }}</b></a> •
+                                        <small class="article-date">{{ post.date_posted|date:"F d, Y" }}</a>
+                                    </div>
+                                    <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
+                                    <a class="article-content"><p>{{ post.content }}</p></a>
                                 </div>
-                                <h4><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
-                                <a class="article-content"><p>{{ post.content }}</p></a>
-                            </div>
-                        </article>
-                    {% endfor %}
-                {% else %}
-                    <small class="text-muted">
-                        <p>There isn't much here...</p>
-                    </small>
-                {% endif %}    
+                            </article>
+                        {% endfor %}
+                    {% else %}
+                        <small class="text-muted">
+                            <p>There isn't much here...</p>
+                        </small>
+                    {% endif %}    
+                </div>
             </div>
         </div>
 
