@@ -81,7 +81,7 @@
 
     <main role="main" class="container">
         <div class="row d-flex" style="flex-wrap: nowrap;">
-          <div class="col-md-8" style="border: 1px solid red;">
+          <div class="col-md-8">
             {% if messages %}
               {% for message in messages%}
                 <div class = "alert alert-{{ message.tags }}">
@@ -92,8 +92,8 @@
             {% block content %}{% endblock %}
           </div>
           <!-- Sidebar Area -->
-          <div class="col-md-4" style="border: 1px solid blue;">
-            <div class="sidebar sticky-top mt-4">
+          <div class="col-md-4">
+            <div class="sidebar">
                 <div class="card">
                     <div class="card-header">
                         Categories
