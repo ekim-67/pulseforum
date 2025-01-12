@@ -227,3 +227,9 @@ small.form-text.text-muted {
   background: #000000;
   border-bottom-color: black !important;
 }
+
+.accordion .accordion-header, 
+.accordion .accordion-button, 
+.accordion .accordion-item {
+    border-bottom: 1px solid black !important;
+}
