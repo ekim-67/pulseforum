@@ -97,11 +97,11 @@
                   <div class="accordion" id="accordionExample">
                     <div class="accordion-item" style="color:white; background-color:black; border-color:black;">
                       <h2 class="accordion-header" id="headingOne" style="color:white; background-color:black; border-color:black;">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="color:white; background-color:black; border-color:black;">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="color:white; background-color:black; border-color:black;">
                           My Groups
                         </button>
                       </h2>
-                      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                           <ul class="list-group list-group-flush">
                             {% for clubname in user.profile.club.all %}
