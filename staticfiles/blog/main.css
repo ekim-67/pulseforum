@@ -209,7 +209,6 @@ small.form-text.text-muted {
   background-color: black; 
   border-color:black;
   background: #000000;
-  border: 1px solid #000000;
   border-radius: 10px;
 }
 
@@ -217,16 +216,14 @@ small.form-text.text-muted {
   background-color: black; 
   border-color:black;
   background: #000000;
-  border: 1px solid #000000;
   border-radius: 10px;
   margin-bottom: 20px;
 }
 
-*.accordion-header {
+.accordion-header {
   color:white; 
   background-color: black; 
   border-color:black;
   background: #000000;
-  border: 1px solid #000000;
   border-radius: 10px;
 }
