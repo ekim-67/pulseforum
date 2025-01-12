@@ -209,6 +209,7 @@ small.form-text.text-muted {
   background-color: black; 
   border-color:black;
   background: #000000;
+  border-bottom: 1px solid black !important;
 }
 
 .accordion-item {
@@ -216,6 +217,7 @@ small.form-text.text-muted {
   border-color:black;
   background: #000000;
   border-radius: 10px;
+  border-bottom: 1px solid black !important;
 }
 
 .accordion-header {
@@ -223,4 +225,5 @@ small.form-text.text-muted {
   background-color: black; 
   border-color:black;
   background: #000000;
+  border-bottom: 1px solid black !important;
 }
