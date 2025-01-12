@@ -232,4 +232,7 @@ small.form-text.text-muted {
 .accordion .accordion-button, 
 .accordion .accordion-item {
     border-bottom: 1px solid black !important;
+    box-shadow: none !important;
+    outline: none !important;
+
 }
